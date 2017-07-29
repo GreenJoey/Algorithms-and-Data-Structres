@@ -57,6 +57,19 @@ class BinaryTree:
             self.postOrder(focus.right)
             print(focus)
 
+    def findNode(self, key: Node) -> Node:
+        focus = self.root
+
+        while focus.key != key :
+            if key < focus.key :
+                focus = focus.left
+            else:
+                focus = focus.right
+
+            if focus is None:
+                return None
+        return focus
+
 
 if __name__ == '__main__':
     tree = BinaryTree()
@@ -71,3 +84,5 @@ if __name__ == '__main__':
     # tree.inOrder(tree.root)
     # tree.preOrder(tree.root)
     tree.postOrder(tree.root)
+
+    print("", tree.findNode(30))
