@@ -107,7 +107,7 @@ class Word {
 
     public Word next;
 
-    public Word(String theWord, String definition) {
+    Word(String theWord, String definition) {
         this.theWord = theWord;
         this.definition = definition;
     }
