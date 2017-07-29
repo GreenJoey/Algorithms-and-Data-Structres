@@ -60,6 +60,21 @@ class BinaryTree {
         }
     }
 
+    public Node findNode(int key) {
+        Node focus = this.root;
+
+        while(focus.key != key) {
+            if(key < focus.key)
+                focus = focus.leftChild;
+            else
+                focus = focus.rightChild;
+            
+            if(focus == null)
+                return null;
+        }
+        return focus;
+    }
+
     public static void main(String[] args) {
         BinaryTree tree = new BinaryTree();
 
@@ -73,6 +88,8 @@ class BinaryTree {
         // tree.inOrder(tree.root);
         // tree.preOrder(tree.root);
         tree.postOrder(tree.root);
+
+        System.out.println(tree.findNode(30));
     }
 }
 
