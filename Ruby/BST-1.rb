@@ -40,6 +40,39 @@ class BinaryTree
             inOrder(focus.rightChild)
         end
     end
+
+    def preOrder(focus)
+        if focus != nil
+            puts(focus)
+            preOrder(focus.leftChild)
+            preOrder(focus.rightChild)
+        end
+    end
+
+    def postOrder(focus)
+        if focus != nil
+            postOrder(focus.leftChild)
+            postOrder(focus.rightChild)
+            puts(focus)
+        end
+    end
+
+    def find(key)
+        focus = @root
+
+        while focus.key != key
+            if key < focus.key
+                focus = focus.leftChild
+            else
+                focus = focus.rightChild
+            end
+
+            if focus == nil
+                return nil
+            end
+        end
+        return focus
+    end
 end
 
 
@@ -67,5 +100,9 @@ if __FILE__ == $0
     tree.addNode(75, "Sales Manager")
     tree.addNode(85, "Salesman 1")
 
-    tree.inOrder(tree.root)
+    # tree.inOrder(tree.root)
+    # tree.preOrder(tree.root)
+    tree.postOrder(tree.root)
+
+    puts(tree.find(30))
 end
