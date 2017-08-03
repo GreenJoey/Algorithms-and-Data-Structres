@@ -50,7 +50,7 @@ class ArrayStructure {
     }
 
     public void insertionSort() {
-        for(int i=1; i<9; ++i) {
+        for(int i=1; i<=9; ++i) {
             int j = i;
 
             int toInsert = array[i];
