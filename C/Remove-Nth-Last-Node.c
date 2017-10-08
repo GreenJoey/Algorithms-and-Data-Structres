@@ -27,9 +27,7 @@ list_t *remove_last(list_t *list, int pos) {
         tail_p = tail_p->next;
 
     while(tail_p->next != NULL) {
-        head_p = head_p->next;
-        tail_p = tail_p->next;
-    }
+        head_p = head_p->}
 
     tail_p = head_p->next->next;
     free(head_p->next);
