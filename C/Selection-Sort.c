@@ -22,6 +22,9 @@ void sort(int *arr, int len) {
         int temp = arr[min];
         arr[min] = arr[i];
         arr[i] = temp;
+
+
+        print(arr, len+1);
     }
 }
 
