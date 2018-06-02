@@ -3,14 +3,19 @@
 
 
 heap_t *new_heap(int size) {
+    /*
+     * Allocate the heap structure
+     * Assign a corrected length to the `length`
+     * Allocate a array of the given length
+    */
     heap_t *heap = (heap_t *)malloc(sizeof(heap_t));
     heap->length = size+1;
     heap->store = (int *)calloc(heap->length, sizeof(int));
     // We are using index 1 as the root of the tree.
     // So populate index 0 with something huge and
     // Set the next_free to 1 to insert the root element at index 1
-    heap->store[0] = 9999999999;
-    heap->next_free = 1;
+    heap->store[0] = 99999999;
+    heap->next_free = 1;  // Point to root so that insertion can start
 
     return heap;
 }
@@ -30,15 +35,14 @@ void insert(heap_t *heap, int elem) {
     puts("Calculating final position");
 #endif
     while(pos != 0) {
-	if(heap->store[pos] > heap->store[ins] && pos != 0) {
-	    temp = heap->store[ins];
-	    heap->store[ins] = heap->store[pos];
-	    heap->store[pos] = temp;
-	}
-	//else
-	//    break;
-	printf("%d\n", pos);
 	pos = (int)ceil((pos - 1) / 2.0);
+
+      // Swap the 
+      if(heap->store[pos] > heap->store[ins] && pos != 0) {
+        temp = heap->store[ins];
+        heap->store[ins] = heap->store[pos];
+        heap->store[pos] = temp;
+      }
     }
 
 #ifdef DEBUG
@@ -48,7 +52,8 @@ void insert(heap_t *heap, int elem) {
 
 
 int peek(heap_t *heap) {
-    return heap->store[1];
+  // Print out the least element from the min heap
+  return heap->store[1];
 }
 
 
