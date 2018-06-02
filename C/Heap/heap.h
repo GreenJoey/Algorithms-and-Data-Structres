@@ -17,6 +17,6 @@ heap_t *new_heap(int initial_size);
 void insert(heap_t *heap, int data);
 int pop(heap_t *heap);
 int peek(heap_t *heap);
-
+int pop(heap_t *heap);
 
 #endif
