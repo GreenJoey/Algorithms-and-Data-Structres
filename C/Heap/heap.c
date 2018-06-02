@@ -28,14 +28,13 @@ void insert(heap_t *heap, int elem) {
     printf("Inserting to open slot %d\n", ins);
 #endif
     heap->store[ins] = elem;
-    int pos = (int)ceil((ins-1)/2.0);  // Get the parent index of the inserted element
+    int pos = ins/2;  // Get the parent index of the inserted element
     int temp;
 
 #ifdef DEBUG
     puts("Calculating final position");
 #endif
     while(pos != 0) {
-	pos = (int)ceil((pos - 1) / 2.0);
 
       // Swap the 
       if(heap->store[pos] > heap->store[ins] && pos != 0) {
@@ -43,6 +42,7 @@ void insert(heap_t *heap, int elem) {
         heap->store[ins] = heap->store[pos];
         heap->store[pos] = temp;
       }
+      pos = pos / 2;
     }
 
 #ifdef DEBUG
