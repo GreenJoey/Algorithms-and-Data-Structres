@@ -27,6 +27,13 @@ void insert(heap_t *heap, int elem) {
 #ifdef DEBUG
     printf("Inserting to open slot %d\n", ins);
 #endif
+
+    // Logic to handle if the heap is outgrowing the allocated space
+    if(heap->next_free >= heap->length) {
+      heap->store = (int *)realloc(heap->store, heap->length * heap->length);
+      heap->length *= heap->length;
+    }
+
     heap->store[ins] = elem;
     int pos = ins/2;  // Get the parent index of the inserted element
     int temp;
