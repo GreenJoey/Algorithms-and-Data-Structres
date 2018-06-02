@@ -20,5 +20,7 @@ int main() {
     for(int pos=1; pos<heap->next_free; ++pos)
       printf("%d ", heap->store[pos]);
 
+    puts("");
+
     return 0;
 }
