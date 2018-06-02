@@ -1,7 +1,7 @@
 #ifndef HEAP_H
 #define HEAP_H
 
-#define DEBUG
+//#define DEBUG
 #include <stdlib.h>
 #include <stdbool.h>
 #include <stdio.h>
