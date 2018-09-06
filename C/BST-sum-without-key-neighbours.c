@@ -1,3 +1,15 @@
+/**
+ * Given a BST and a key Node, find the total sum in BST, except those Node which are adjacent to key Node.
+ *
+ *          15
+ *      13       20
+ * 
+ *   12  14  18   24
+ * 
+ * 11            23  25
+ *
+ * Assuming the key node would be 20, then the sum would be 118
+**/
 #include <stdio.h>
 #include <malloc.h>
 
