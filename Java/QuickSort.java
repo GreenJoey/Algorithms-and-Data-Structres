@@ -50,6 +50,8 @@ class QuickSort {
             // now at right place
             int pi = partition(arr, low, high);
 
+            System.out.println(Arrays.toString(arr));
+
             // Recursively sort elements before
             // partition and after partition
             sort(arr, low, pi-1);
@@ -58,8 +60,10 @@ class QuickSort {
     }
 
     public static void main(String[] args) {
-        int arr[] = {10, 7, 8, 9, 1, 5};
+        int arr[] = {25, 57, 48, 37, 12, 92, 86, 33};
         int n = arr.length;
+
+        System.out.println(Arrays.toString(arr));
 
         QuickSort ob = new QuickSort();
         ob.sort(arr, 0, n-1);
